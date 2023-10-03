@@ -23,9 +23,10 @@ void app_main(void)
         {
             printf("ADC Val: %d\n", adcVal);
             gpio_set_level(36, 0);
-            vTaskDelay(pdMS_TO_TICKS(200));
+            color_flicker_target(0, IDX_CMD_RED);
+            vTaskDelay(pdMS_TO_TICKS(20));
             gpio_set_level(36, 1);
         }
-        vTaskDelay(100);
+        vTaskDelay(10);
     }
 }
